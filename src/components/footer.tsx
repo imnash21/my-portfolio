@@ -42,6 +42,10 @@ export default function Footer() {
 							, powered by{' '}
 							<Link href="https://vite.dev" target="_blank" fontWeight={'semibold'} color={'foreground'}>
 								Vite
+							</Link>{' '}
+							and deployed on{' '}
+							<Link href="https://vercel.com" target="_blank" fontWeight={'semibold'} color={'foreground'}>
+								Vercel
 							</Link>
 						</Box>
 					</Stack>
