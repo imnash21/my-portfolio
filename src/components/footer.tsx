@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Icon, Link, Separator, SimpleGrid, Stack } from '@chakra-ui/react'
 import Container from './container'
-import { IconBrandFacebook, IconBrandGithub, IconBrandLinkedin, IconMail, IconPhone } from '@tabler/icons-react'
+import { TbBrandFacebook, TbBrandGithub, TbBrandLinkedin, TbMail, TbPhone } from 'react-icons/tb'
 
 export default function Footer() {
 	return (
@@ -42,7 +42,7 @@ export default function Footer() {
 							{/* Email Address */}
 							<HStack as={'li'}>
 								<Icon>
-									<IconMail />
+									<TbMail />
 								</Icon>
 								nasiefmarhala@gmail.com
 							</HStack>
@@ -50,7 +50,7 @@ export default function Footer() {
 							{/* Phone Number */}
 							<HStack as={'li'}>
 								<Icon>
-									<IconPhone />
+									<TbPhone />
 								</Icon>
 								+63 991 658 8296
 							</HStack>
@@ -67,7 +67,7 @@ export default function Footer() {
 								<HStack asChild color={'foreground'}>
 									<Link href="https://www.linkedin.com/in/nasief-m-7792aa148" target={'_blank'}>
 										<Icon>
-											<IconBrandLinkedin />
+											<TbBrandLinkedin />
 										</Icon>
 										LinkedIn
 									</Link>
@@ -79,7 +79,7 @@ export default function Footer() {
 								<HStack asChild color={'foreground'}>
 									<Link href="https://github.com/imnash21" target={'_blank'}>
 										<Icon>
-											<IconBrandGithub />
+											<TbBrandGithub />
 										</Icon>
 										GitHub
 									</Link>
@@ -91,7 +91,7 @@ export default function Footer() {
 								<HStack asChild color={'foreground'}>
 									<Link href="https://www.facebook.com/imnash21" target={'_blank'}>
 										<Icon>
-											<IconBrandFacebook />
+											<TbBrandFacebook />
 										</Icon>
 										Facebook
 									</Link>
