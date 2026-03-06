@@ -4,6 +4,7 @@ import {
 	chakraui,
 	css3,
 	html5,
+	inertiajs,
 	javascript,
 	laravel,
 	mantine,
@@ -86,6 +87,11 @@ export default function Techs() {
 							{/* Laravel */}
 							<Marquee.Item>
 								<Tech image={laravel} caption="Laravel" width={'64px'} />
+							</Marquee.Item>
+
+							{/* Inertiajs */}
+							<Marquee.Item>
+								<Tech image={inertiajs} caption="Inertia.js" />
 							</Marquee.Item>
 
 							{/* PHP */}
