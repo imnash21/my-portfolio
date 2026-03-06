@@ -27,10 +27,22 @@ export default function Footer() {
 						</div>
 						<Separator borderColor={'secondary'} />
 						<Box fontSize={'sm'} color={'foregroundDimmed'}>
-							Made in{' '}
-							<Box as={'span'} fontWeight={'semibold'} color={'foreground'}>
+							Built with{' '}
+							<Link href="https://react.dev" target="_blank" fontWeight={'semibold'} color={'foreground'}>
+								React
+							</Link>
+							{' + '}
+							<Link href="https://www.chakra-ui.com" target="_blank" fontWeight={'semibold'} color={'foreground'}>
 								Chakra UI
-							</Box>
+							</Link>
+							{' + '}
+							<Link href="https://motion.dev" target="_blank" fontWeight={'semibold'} color={'foreground'}>
+								Motion
+							</Link>
+							, powered by{' '}
+							<Link href="https://vite.dev" target="_blank" fontWeight={'semibold'} color={'foreground'}>
+								Vite
+							</Link>
 						</Box>
 					</Stack>
 
