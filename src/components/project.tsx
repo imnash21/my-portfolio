@@ -2,25 +2,48 @@ import { Box, Center, CloseButton, Dialog, Image, Portal } from '@chakra-ui/reac
 import { Prose } from './ui/prose'
 import type { ProjectType } from './partials/projects'
 import ProjectCarousel from './project-carousel'
+import { motion, useAnimation } from 'motion/react'
+import { useRef } from 'react'
+
+const MotionImage = motion(Image)
 
 type ProjectProps = ProjectType & {
 	projects: ProjectType[]
 }
 
 export default function Project({ image, caption, projects }: ProjectProps) {
+	const controls = useAnimation()
+	const isHovering = useRef(false)
+
+	const handleHoverStart = async () => {
+		isHovering.current = true
+		while (isHovering.current) {
+			await controls.start({ y: -10, transition: { duration: 1, ease: 'easeInOut' } })
+			if (!isHovering.current) break
+			await controls.start({ y: 0, transition: { duration: 1, ease: 'easeInOut' } })
+		}
+	}
+
+	const handleHoverEnd = () => {
+		isHovering.current = false
+		controls.start({ y: 0 })
+	}
+
 	return (
 		<Dialog.Root size={'full'}>
 			<Dialog.Trigger asChild>
 				<Prose as={'figure'} marginInline={'auto'}>
-					<Image
+					<MotionImage
 						src={image}
 						alt={caption}
 						objectFit={'cover'}
 						shadow={'lg'}
 						aspectRatio={'4/3'}
 						cursor={'pointer'}
-						scale={{ _hover: 1.02, _active: 1.02, _focus: 1.02 }}
-						transition={'scale 0.15s ease'}
+						animate={controls}
+						onHoverStart={handleHoverStart}
+						onHoverEnd={handleHoverEnd}
+						whileHover={{ scale: 1.02 }}
 					/>
 					<Box as={'figcaption'}>{caption}</Box>
 				</Prose>
