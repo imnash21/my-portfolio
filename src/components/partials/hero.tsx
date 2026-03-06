@@ -1,6 +1,9 @@
 import { background, me } from '@/lib/images'
 import { Center, Heading, HStack, Image, Separator, Stack, Text } from '@chakra-ui/react'
 import Container from '../container'
+import { motion } from 'motion/react'
+
+const MotionImageContainer = motion(Center)
 
 export default function Hero() {
 	return (
@@ -52,9 +55,18 @@ export default function Hero() {
 						</Stack>
 					</Stack>
 
-					<Center rounded={'4xl'} backgroundColor={'background'} overflow={'clip'} hideBelow={'lg'}>
+					<MotionImageContainer
+						rounded={'4xl'}
+						backgroundColor={'background'}
+						overflow={'clip'}
+						hideBelow={'lg'}
+						animate={{
+							y: [0, -12, 0],
+							transition: { duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' },
+						}}
+					>
 						<Image src={me} aspectRatio={'3/4'} objectFit={'cover'} />
-					</Center>
+					</MotionImageContainer>
 				</HStack>
 			</Container>
 		</HStack>
