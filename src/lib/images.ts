@@ -40,6 +40,19 @@ import carewiseSuperAdminDashboardPage from '@/assets/projects/carewise/carewise
 import carewiseAdminDashboardPage from '@/assets/projects/carewise/carewise-admin-dashboard-page.png'
 import carewiseTeacherDashboardPage from '@/assets/projects/carewise/carewise-teacher-dashboard-page.png'
 
+// Cat Club Cafe
+import catClubCafeLandingPagePage1 from '@/assets/projects/cat-club-cafe/cat-club-cafe-landing-page-1.png'
+import catClubCafeLandingPagePage2 from '@/assets/projects/cat-club-cafe/cat-club-cafe-landing-page-2.png'
+import catClubCafeStorePage from '@/assets/projects/cat-club-cafe/cat-club-cafe-store-page.png'
+import catClubCafeStoreViewPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-store-view-page.png'
+import catClubCafeCashierPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-cashier-page.png'
+import catClubCafeCashierOrderSubmissionPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-cashier-order-submission-page.png'
+import catClubCafeCashierOrderReceiptPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-cashier-order-receipt-page.png'
+import catClubCafeCashierOrdersPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-cashier-orders-page.png'
+import catClubCafeCashierOrderItemsPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-cashier-order-items-page.png'
+import catClubCafeAdminDashboardPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-admin-dashboard-page.png'
+import catClubCafeProfileSettingsPage from '@/assets/projects/cat-club-cafe/cat-club-cafe-profile-settings-page.png'
+
 export {
 	me,
 	background,
@@ -77,4 +90,16 @@ export {
 	carewiseSuperAdminDashboardPage,
 	carewiseAdminDashboardPage,
 	carewiseTeacherDashboardPage,
+	// Projects - Cat Club Cafe
+	catClubCafeLandingPagePage1,
+	catClubCafeLandingPagePage2,
+	catClubCafeStorePage,
+	catClubCafeStoreViewPage,
+	catClubCafeCashierPage,
+	catClubCafeCashierOrderSubmissionPage,
+	catClubCafeCashierOrderReceiptPage,
+	catClubCafeCashierOrdersPage,
+	catClubCafeCashierOrderItemsPage,
+	catClubCafeAdminDashboardPage,
+	catClubCafeProfileSettingsPage,
 }
