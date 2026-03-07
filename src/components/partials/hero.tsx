@@ -1,5 +1,5 @@
 import { background, me } from '@/lib/images'
-import { Center, Heading, HStack, Image, Separator, Stack, Text } from '@chakra-ui/react'
+import { Center, Flex, Heading, HStack, Image, Separator, Stack, Text } from '@chakra-ui/react'
 import Container from '../container'
 import { motion } from 'motion/react'
 
@@ -14,11 +14,17 @@ export default function Hero() {
 			backgroundAttachment={'fixed'}
 			backgroundSize={'cover'}
 			aspectRatio={'16/9'}
-			maxHeight={700}
+			maxHeight={{ lg: '700px' }}
 			width={'full'}
 		>
 			<Container>
-				<HStack gapX={'20'} py={'20'}>
+				<Flex
+					alignItems={'center'}
+					flexDirection={{ lgDown: 'column-reverse' }}
+					gap={{ base: '8', lg: '20' }}
+					py={{ base: '12', lg: '20' }}
+				>
+					{/* Text */}
 					<Stack gapY={{ base: '6', sm: '8' }} flex={1} color={'background'}>
 						<div>
 							<Text as={'span'} fontWeight={'semibold'} color={'foregroundDimmed'}>
@@ -26,7 +32,7 @@ export default function Hero() {
 							</Text>
 							<Heading
 								as={'h1'}
-								size={{ base: '5xl', lg: '6xl', xl: '7xl' }}
+								size={{ base: '4xl', md: '6xl', xl: '7xl' }}
 								fontWeight={'bold'}
 								lineHeight={1}
 								color={'foreground'}
@@ -41,7 +47,7 @@ export default function Hero() {
 						<Separator borderColor={'foregroundDimmed'} />
 
 						<Stack gapY={'6'}>
-							<Heading size={{ base: '3xl', sm: '4xl' }} fontWeight={'bold'} color={'foreground'}>
+							<Heading size={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'} color={'foreground'}>
 								Full Stack Developer
 							</Heading>
 							<Text>
@@ -55,19 +61,19 @@ export default function Hero() {
 						</Stack>
 					</Stack>
 
+					{/* Image */}
 					<MotionImageContainer
 						rounded={'4xl'}
 						backgroundColor={'background'}
 						overflow={'clip'}
-						hideBelow={'lg'}
 						animate={{
 							y: [0, -12, 0],
 							transition: { duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' },
 						}}
 					>
-						<Image src={me} aspectRatio={'3/4'} objectFit={'cover'} />
+						<Image src={me} aspectRatio={3 / 4} objectFit={'cover'} />
 					</MotionImageContainer>
-				</HStack>
+				</Flex>
 			</Container>
 		</HStack>
 	)
