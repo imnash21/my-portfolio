@@ -5,7 +5,7 @@ import ProjectCarousel from './project-carousel'
 import { motion, useAnimation } from 'motion/react'
 import { useRef } from 'react'
 
-const MotionImage = motion(Image)
+const MotionImage = motion.create(Image)
 
 type ProjectProps = ProjectType & {
 	projects: ProjectType[]

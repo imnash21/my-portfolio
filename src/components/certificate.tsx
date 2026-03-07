@@ -4,7 +4,7 @@ import type { CertificateType } from './partials/certificates'
 import { motion, useAnimation } from 'motion/react'
 import { useRef } from 'react'
 
-const MotionImage = motion(Image)
+const MotionImage = motion.create(Image)
 
 type CertificateProps = CertificateType
 

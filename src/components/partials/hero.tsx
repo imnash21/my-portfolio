@@ -3,7 +3,7 @@ import { Center, Flex, Heading, HStack, Image, Separator, Stack, Text } from '@c
 import Container from '../container'
 import { motion } from 'motion/react'
 
-const MotionImageContainer = motion(Center)
+const MotionImageContainer = motion.create(Center)
 
 export default function Hero() {
 	return (
