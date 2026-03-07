@@ -3,6 +3,7 @@ import Container from './container'
 import Brand from './brand'
 import Nav from './nav'
 import type { NavItemType } from './types'
+import NavMobile from './nav-mobile'
 
 const navItems = [
 	{ label: 'About', href: '#' },
@@ -12,19 +13,12 @@ const navItems = [
 
 export default function Header() {
 	return (
-		<HStack
-			as={'header'}
-			paddingInline={{ base: '4', md: '6' }}
-			height={'16'}
-			bgColor={'primary'}
-			position={'sticky'}
-			top={0}
-			zIndex={2}
-		>
+		<HStack as={'header'} height={'16'} bgColor={'primary'} position={'sticky'} top={0} zIndex={2}>
 			<Container>
 				<HStack>
 					<Brand />
 					<Nav items={navItems} />
+					<NavMobile items={navItems} />
 				</HStack>
 			</Container>
 		</HStack>
