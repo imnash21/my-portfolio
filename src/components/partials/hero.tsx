@@ -32,7 +32,7 @@ export default function Hero() {
 							</Text>
 							<Heading
 								as={'h1'}
-								size={{ base: '4xl', md: '6xl', xl: '7xl' }}
+								size={{ base: '4xl', md: '6xl' }}
 								fontWeight={'bold'}
 								lineHeight={1}
 								color={'foreground'}
@@ -47,7 +47,7 @@ export default function Hero() {
 						<Separator borderColor={'foregroundDimmed'} />
 
 						<Stack gapY={'6'}>
-							<Heading size={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'} color={'foreground'}>
+							<Heading size={{ base: '2xl', sm: '3xl' }} fontWeight={'bold'} color={'foreground'}>
 								Full Stack Developer
 							</Heading>
 							<Text>
@@ -63,7 +63,7 @@ export default function Hero() {
 
 					{/* Image */}
 					<MotionImageContainer
-						rounded={'4xl'}
+						rounded={'full'}
 						backgroundColor={'background'}
 						overflow={'clip'}
 						animate={{
@@ -71,7 +71,7 @@ export default function Hero() {
 							transition: { duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' },
 						}}
 					>
-						<Image src={me} aspectRatio={3 / 4} objectFit={'cover'} />
+						<Image src={me} aspectRatio={1} />
 					</MotionImageContainer>
 				</Flex>
 			</Container>
