@@ -20,7 +20,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 						<Carousel.Item key={index} index={index} aspectRatio={{ base: 3 / 2, lg: 16 / 9 }}>
 							<Image
 								src={project.image}
-								alt={project.caption}
+								alt={project.title}
 								shadow={'xl'}
 								width={'full'}
 								height={'full'}
@@ -53,7 +53,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 							width="20"
 							aspectRatio="16/9"
 							src={project.image}
-							alt={project.caption}
+							alt={project.title}
 							objectFit="cover"
 							borderRadius={'sm'}
 						/>

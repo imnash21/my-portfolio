@@ -8,7 +8,7 @@ import Section from '../section'
 
 export type ProjectType = {
 	image: string
-	caption: string
+	title: string
 }
 
 export default function Projects() {
@@ -20,8 +20,8 @@ export default function Projects() {
 				</SectionTitle>
 
 				<SimpleGrid columns={{ md: 2 }} gap={{ base: '6', sm: '10', lg: '14' }}>
-					<Project image={carewiseLandingPage1} caption="CareWise" projects={carewiseProjects} />
-					<Project image={catClubCafeLandingPagePage1} caption="Cat Club Cafe" projects={catClubCafeProjects} />
+					<Project image={carewiseLandingPage1} title="CareWise" projects={carewiseProjects} />
+					<Project image={catClubCafeLandingPagePage1} title="Cat Club Cafe" projects={catClubCafeProjects} />
 				</SimpleGrid>
 			</Container>
 		</Section>
