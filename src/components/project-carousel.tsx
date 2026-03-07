@@ -17,8 +17,16 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
 				<Carousel.ItemGroup>
 					{projects.map((project, index) => (
-						<Carousel.Item key={index} index={index}>
-							<Image src={project.image} alt={project.caption} shadow={'xl'} height={'full'} borderRadius={'lg'} />
+						<Carousel.Item key={index} index={index} aspectRatio={{ base: 3 / 2, lg: 16 / 9 }}>
+							<Image
+								src={project.image}
+								alt={project.caption}
+								shadow={'xl'}
+								width={'full'}
+								height={'full'}
+								borderRadius={'lg'}
+								objectFit={'fill'}
+							/>
 						</Carousel.Item>
 					))}
 				</Carousel.ItemGroup>
