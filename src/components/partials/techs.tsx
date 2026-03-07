@@ -28,10 +28,10 @@ export default function Techs() {
 				<Marquee.Root autoFill pauseOnInteraction spacing={'4rem'}>
 					<Marquee.Edge side="start" />
 					<Marquee.Viewport>
-						<Marquee.Content>
+						<Marquee.Content alignItems={'center'}>
 							{/* React */}
 							<Marquee.Item>
-								<Tech image={react} caption="React" />
+								<Tech image={react} caption="React" width={'64px'} />
 							</Marquee.Item>
 
 							{/* Vue.js */}
@@ -61,7 +61,7 @@ export default function Techs() {
 
 							{/* Tailwind CSS */}
 							<Marquee.Item>
-								<Tech image={tailwindcss} caption="Tailwind CSS" width={'80px'} />
+								<Tech image={tailwindcss} caption="Tailwind CSS" width={'80px'} height={'42px'} />
 							</Marquee.Item>
 
 							{/* Mantine */}
@@ -81,7 +81,7 @@ export default function Techs() {
 
 							{/* Nuxt UI */}
 							<Marquee.Item>
-								<Tech image={nuxtui} caption="Nuxt UI" width={'72px'} />
+								<Tech image={nuxtui} caption="Nuxt UI" width={'72px'} height={'52px'} />
 							</Marquee.Item>
 
 							{/* Laravel */}
@@ -96,7 +96,7 @@ export default function Techs() {
 
 							{/* PHP */}
 							<Marquee.Item>
-								<Tech image={php} caption="PHP" width={'80px'} />
+								<Tech image={php} caption="PHP" width={'80px'} height={'48px'} />
 							</Marquee.Item>
 
 							{/* MySQL */}
@@ -111,7 +111,7 @@ export default function Techs() {
 
 							{/* Node.js */}
 							<Marquee.Item>
-								<Tech image={nodejs} caption="Node.js" width={'88px'} />
+								<Tech image={nodejs} caption="Node.js" width={'88px'} height={'48px'} />
 							</Marquee.Item>
 						</Marquee.Content>
 					</Marquee.Viewport>
