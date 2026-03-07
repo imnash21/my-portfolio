@@ -1,12 +1,14 @@
-import { HStack, Link } from '@chakra-ui/react'
+import { HStack } from '@chakra-ui/react'
 import Container from './container'
 import Brand from './brand'
+import Nav from './nav'
+import type { NavItemType } from './types'
 
 const navItems = [
 	{ label: 'About', href: '#' },
 	{ label: 'Certificates', href: '#certificates' },
 	{ label: 'Projects', href: '#projects' },
-]
+] satisfies NavItemType[]
 
 export default function Header() {
 	return (
@@ -22,20 +24,7 @@ export default function Header() {
 			<Container>
 				<HStack>
 					<Brand />
-					<HStack marginInlineStart={'auto'} gapX={'6'}>
-						{navItems.map((item) => (
-							<Link
-								key={item.href}
-								href={item.href}
-								color={{ base: 'foregroundDimmed', _hover: 'foreground' }}
-								fontSize={'xs'}
-								fontWeight={'semibold'}
-								textTransform={'uppercase'}
-							>
-								{item.label}
-							</Link>
-						))}
-					</HStack>
+					<Nav items={navItems} />
 				</HStack>
 			</Container>
 		</HStack>
