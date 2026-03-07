@@ -6,7 +6,7 @@ import type { NavItemType } from './types'
 import NavMobile from './nav-mobile'
 
 const navItems = [
-	{ label: 'About', href: '#' },
+	{ label: 'Introduction', href: '#' },
 	{ label: 'Certificates', href: '#certificates' },
 	{ label: 'Projects', href: '#projects' },
 ] satisfies NavItemType[]
