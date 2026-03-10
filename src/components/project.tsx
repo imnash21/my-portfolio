@@ -32,7 +32,9 @@ export default function Project({ image, title, projects }: ProjectProps) {
 	return (
 		<Dialog.Root size={'full'}>
 			<Dialog.Trigger asChild>
+				{/* Figure */}
 				<Prose marginInline={'auto'}>
+					{/* Image */}
 					<MotionImage
 						src={image}
 						alt={title}
@@ -45,12 +47,13 @@ export default function Project({ image, title, projects }: ProjectProps) {
 						onHoverEnd={handleHoverEnd}
 						whileHover={{ scale: 1.02 }}
 					/>
-
+					{/* Title */}
 					<Heading as={'h4'} size={'lg'} textAlign={'center'}>
 						{title}
 					</Heading>
 				</Prose>
 			</Dialog.Trigger>
+
 			<Portal>
 				<Dialog.Backdrop />
 				<Dialog.Positioner>
@@ -60,6 +63,7 @@ export default function Project({ image, title, projects }: ProjectProps) {
 						</Dialog.CloseTrigger>
 						<Dialog.Body asChild height="full" padding={0}>
 							<Center>
+								{/* Carousel */}
 								<ProjectCarousel projects={projects} />
 							</Center>
 						</Dialog.Body>

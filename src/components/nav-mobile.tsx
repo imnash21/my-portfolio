@@ -42,6 +42,7 @@ export default function NavMobile({ items }: NavMobileProps) {
 
 	return (
 		<>
+			{/* Nav Mobile Trigger */}
 			<IconButton
 				aria-label="Open menu"
 				variant="ghost"
@@ -57,6 +58,7 @@ export default function NavMobile({ items }: NavMobileProps) {
 			<Portal>
 				<AnimatePresence>
 					{shouldShowMenu && (
+						// Nav Mobile Menu
 						<MotionNav
 							as={'nav'}
 							initial={{ height: 0, opacity: 0, y: -8 }}
@@ -81,6 +83,7 @@ export default function NavMobile({ items }: NavMobileProps) {
 							paddingBlockEnd={'3'}
 						>
 							{items.map((item) => (
+								// Nav Mobile Item Link
 								<NavItem
 									key={item.href}
 									label={item.label}
@@ -102,8 +105,10 @@ type NavItemProps = {
 	isActive: boolean
 }
 
+// Nav Mobile Item Link
 function NavItem({ label, href, isActive }: NavItemProps) {
 	return (
+		// Link
 		<Link
 			href={href}
 			color={{ base: isActive ? 'foreground' : 'foregroundDimmed', _hover: 'foreground' }}
@@ -117,7 +122,9 @@ function NavItem({ label, href, isActive }: NavItemProps) {
 			position={'relative'}
 			_focus={{ outline: 'none' }}
 		>
+			{/* Label */}
 			{label}
+			{/* Indicator */}
 			{isActive && (
 				<MotionIndicator
 					layoutId="nav-mobile-indicator"

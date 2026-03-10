@@ -38,6 +38,7 @@ export default function Nav({ items }: NavProps) {
 	return (
 		<HStack as={'nav'} gap={0} marginInlineStart={'auto'} hideBelow={'md'}>
 			{items.map((item) => (
+				// Link
 				<Link
 					key={item.href}
 					href={item.href}
@@ -50,7 +51,9 @@ export default function Nav({ items }: NavProps) {
 					paddingInline={'4'}
 					_focus={{ outline: 'none' }}
 				>
+					{/* Label */}
 					{item.label}
+					{/* Indicator */}
 					{isActiveItem(currentHash, item.href) && (
 						<MotionIndicator
 							layoutId="nav-indicator"

@@ -29,7 +29,9 @@ export default function Certificate({ image, caption }: CertificateProps) {
 	return (
 		<Dialog.Root size={'full'}>
 			<Dialog.Trigger asChild>
+				{/* Figure */}
 				<Prose as={'figure'} marginInline={'auto'}>
+					{/* Image */}
 					<MotionImage
 						src={image}
 						alt={caption}
@@ -42,9 +44,11 @@ export default function Certificate({ image, caption }: CertificateProps) {
 						onHoverEnd={handleHoverEnd}
 						whileHover={{ scale: 1.02 }}
 					/>
+					{/* Caption */}
 					<Box as={'figcaption'}>{caption}</Box>
 				</Prose>
 			</Dialog.Trigger>
+
 			<Portal>
 				<Dialog.Backdrop />
 				<Dialog.Positioner>
@@ -54,6 +58,7 @@ export default function Certificate({ image, caption }: CertificateProps) {
 						</Dialog.CloseTrigger>
 						<Dialog.Body asChild height="full" padding={0}>
 							<Center>
+								{/* Image */}
 								<Image src={image} alt={caption} aspectRatio={4 / 3} maxHeight={'85svh'} borderRadius={'lg'} />
 							</Center>
 						</Dialog.Body>

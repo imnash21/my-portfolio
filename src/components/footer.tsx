@@ -25,17 +25,18 @@ const Footer = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
 		>
 			<Container paddingBlock={'12'}>
 				<SimpleGrid columns={{ sm: 2, xl: 3 }} gap={{ base: '6', md: '10' }}>
-					{/* About */}
+					{/* About Section */}
 					<About />
-					{/* Contact Information */}
+					{/* Contact Section */}
 					<Contact />
-					{/* Social Information */}
+					{/* Social Section */}
 					<Social />
 				</SimpleGrid>
 			</Container>
 
 			<Separator borderColor={'secondary'} />
 
+			{/* Copyright */}
 			<Box textAlign={'center'} paddingBlock={'6'} fontSize={'sm'} color={'foregroundDimmed'}>
 				&copy; {new Date().getFullYear()}{' '}
 				<Box as={'span'} fontWeight={'semibold'} color={'foreground'}>
@@ -50,9 +51,10 @@ const Footer = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
 
 export default Footer
 
+// About Section
 function About() {
 	return (
-		<Stack gapY={'6'} gridColumn={{ smToXl: '1 / -1' }} width={'full'}>
+		<Stack as={'section'} gapY={'6'} gridColumn={{ smToXl: '1 / -1' }} width={'full'}>
 			<div>
 				<Heading size={{ base: '3xl', sm: '4xl' }} textTransform={'uppercase'} fontWeight={'bold'}>
 					Nasief M. Marhala
@@ -86,9 +88,10 @@ function About() {
 	)
 }
 
+// Contact Section
 function Contact() {
 	return (
-		<Stack gapY={'6'}>
+		<Stack as={'section'} gapY={'6'}>
 			<Heading fontWeight={'bold'}>Contact</Heading>
 
 			<Box as={'ul'} spaceY={'3'}>
@@ -112,9 +115,10 @@ function Contact() {
 	)
 }
 
+// Social Section
 function Social() {
 	return (
-		<Stack gapY={'6'}>
+		<Stack as={'section'} gapY={'6'}>
 			<Heading fontWeight={'bold'}>Social</Heading>
 
 			<Box as={'ul'} spaceY={'3'}>

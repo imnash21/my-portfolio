@@ -18,6 +18,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 				<Carousel.ItemGroup>
 					{projects.map((project, index) => (
 						<Carousel.Item key={index} index={index} aspectRatio={{ base: 3 / 2, lg: 16 / 9 }}>
+							{/* Image */}
 							<Image
 								src={project.image}
 								alt={project.title}
@@ -38,6 +39,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 				</Carousel.NextTrigger> */}
 			</Carousel.Control>
 
+			{/* Indicators */}
 			<Carousel.IndicatorGroup>
 				{projects.map((project, index) => (
 					<Carousel.Indicator
@@ -49,6 +51,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 							outlineOffset: '2px',
 						}}
 					>
+						{/* Image */}
 						<Image
 							width="20"
 							aspectRatio="16/9"
