@@ -2,6 +2,11 @@ import { Box, Heading, HStack, Icon, Link, Separator, SimpleGrid, Stack } from '
 import Container from './container'
 import { TbBrandFacebook, TbBrandGithub, TbBrandLinkedin, TbMail, TbPhone } from 'react-icons/tb'
 
+const socials = [
+	{ icon: TbBrandLinkedin, href: 'https://www.linkedin.com/in/nasief-m-7792aa148', label: 'LinkedIn' },
+	{ icon: TbBrandGithub, href: 'https://github.com/imnash21', label: 'GitHub' },
+	{ icon: TbBrandFacebook, href: 'https://www.facebook.com/imnash21', label: 'Facebook' },
+]
 export default function Footer() {
 	return (
 		<Box
@@ -13,10 +18,10 @@ export default function Footer() {
 			left={0}
 			right={0}
 			zIndex={-1}
-			height={'375px'}
+			height={{ lg: '375px' }}
 		>
 			<Container paddingBlock={'20'}>
-				<SimpleGrid columns={{ sm: 3 }} gap={'6'} justifyItems={'center'}>
+				<SimpleGrid columns={{ sm: 3 }} gap={'6'} justifyItems={{ sm: 'center' }}>
 					{/* About */}
 					<Stack gapY={'6'}>
 						<div>
@@ -78,41 +83,18 @@ export default function Footer() {
 						<Heading fontWeight={'bold'}>Social</Heading>
 
 						<Box as={'ul'} spaceY={'3'}>
-							{/* LinkedIn */}
-							<li>
-								<HStack asChild color={'foreground'}>
-									<Link href="https://www.linkedin.com/in/nasief-m-7792aa148" target={'_blank'}>
-										<Icon>
-											<TbBrandLinkedin />
-										</Icon>
-										LinkedIn
-									</Link>
-								</HStack>
-							</li>
-
-							{/* GitHub */}
-							<li>
-								<HStack asChild color={'foreground'}>
-									<Link href="https://github.com/imnash21" target={'_blank'}>
-										<Icon>
-											<TbBrandGithub />
-										</Icon>
-										GitHub
-									</Link>
-								</HStack>
-							</li>
-
-							{/* Facebook */}
-							<li>
-								<HStack asChild color={'foreground'}>
-									<Link href="https://www.facebook.com/imnash21" target={'_blank'}>
-										<Icon>
-											<TbBrandFacebook />
-										</Icon>
-										Facebook
-									</Link>
-								</HStack>
-							</li>
+							{socials.map((social) => (
+								<li>
+									<HStack asChild color={'foreground'}>
+										<Link href={social.href} target={'_blank'}>
+											<Icon>
+												<social.icon />
+											</Icon>
+											{social.label}
+										</Link>
+									</HStack>
+								</li>
+							))}
 						</Box>
 					</Stack>
 				</SimpleGrid>
