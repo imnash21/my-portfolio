@@ -1,5 +1,5 @@
 import { Box, Separator } from '@chakra-ui/react'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Footer from './components/footer'
 import Header from './components/header'
 import Hero from './components/partials/hero'
@@ -18,6 +18,31 @@ type TrackedSection = { hash: SectionHash; element: HTMLElement | null }
 type ActiveSection = { hash: SectionHash; element: HTMLElement }
 
 export default function App() {
+	const footer = useRef<HTMLDivElement>(null)
+	const [measuredFooterHeight, setMeasuredFooterHeight] = useState('auto')
+
+	useEffect(() => {
+		const footerElement = footer.current
+
+		if (!footerElement) return
+
+		const updateFooterHeight = () => {
+			setMeasuredFooterHeight(`${footerElement.offsetHeight}px`)
+		}
+
+		updateFooterHeight()
+
+		const resizeObserver = new ResizeObserver(updateFooterHeight)
+		resizeObserver.observe(footerElement)
+
+		window.addEventListener('resize', updateFooterHeight)
+
+		return () => {
+			resizeObserver.disconnect()
+			window.removeEventListener('resize', updateFooterHeight)
+		}
+	}, [])
+
 	useEffect(() => {
 		const trackedSections = sections
 			.map<TrackedSection>((section) => ({
@@ -74,7 +99,7 @@ export default function App() {
 		<>
 			<Header />
 
-			<Box as={'main'} backgroundColor={'white'} marginBlockEnd={'375px'} zIndex={1}>
+			<Box as={'main'} backgroundColor={'white'} marginBlockEnd={measuredFooterHeight} zIndex={1}>
 				<Box as={'section'} data-scroll-section={'top'} scrollMarginTop={'16'}>
 					<Hero />
 					<Techs />
@@ -84,7 +109,7 @@ export default function App() {
 				<Projects />
 			</Box>
 
-			<Footer />
+			<Footer ref={footer} />
 		</>
 	)
 }
