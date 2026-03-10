@@ -24,7 +24,7 @@ const Footer = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
 			{...props}
 		>
 			<Container paddingBlock={'12'}>
-				<SimpleGrid columns={{ sm: 3 }} gap={'6'} justifyItems={{ sm: 'center' }}>
+				<SimpleGrid columns={{ sm: 2, xl: 3 }} gap={{ base: '6', md: '10' }}>
 					{/* About */}
 					<About />
 					{/* Contact Information */}
@@ -52,9 +52,9 @@ export default Footer
 
 function About() {
 	return (
-		<Stack gapY={'6'}>
+		<Stack gapY={'6'} gridColumn={{ smToXl: '1 / -1' }} width={'full'}>
 			<div>
-				<Heading size={'4xl'} textTransform={'uppercase'} fontWeight={'bold'}>
+				<Heading size={{ base: '3xl', sm: '4xl' }} textTransform={'uppercase'} fontWeight={'bold'}>
 					Nasief M. Marhala
 				</Heading>
 				<Box color={'foregroundDimmed'}>A full stack web developer</Box>
