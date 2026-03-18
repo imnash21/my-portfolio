@@ -1,4 +1,4 @@
-import { Center, CloseButton, Dialog, Heading, Image, Portal } from '@chakra-ui/react'
+import { Center, CloseButton, Dialog, Heading, Image, Portal, Text } from '@chakra-ui/react'
 import type { ProjectType } from './partials/projects'
 import ProjectCarousel from './project-carousel'
 import { motion, useAnimation } from 'motion/react'
@@ -8,10 +8,11 @@ import { Prose } from './ui/prose'
 const MotionImage = motion.create(Image)
 
 type ProjectProps = ProjectType & {
+	description: string
 	projects: ProjectType[]
 }
 
-export default function Project({ image, title, projects }: ProjectProps) {
+export default function Project({ image, title, projects, description }: ProjectProps) {
 	const controls = useAnimation()
 	const isHovering = useRef(false)
 
@@ -51,6 +52,9 @@ export default function Project({ image, title, projects }: ProjectProps) {
 					<Heading as={'h4'} size={'lg'} textAlign={'center'}>
 						{title}
 					</Heading>
+					<Text fontSize={'sm'} textAlign={'center'}>
+						{description}
+					</Text>
 				</Prose>
 			</Dialog.Trigger>
 
