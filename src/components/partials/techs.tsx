@@ -2,6 +2,7 @@ import { Box, Marquee } from '@chakra-ui/react'
 import Container from '../container'
 import {
 	chakraui,
+	csharp,
 	css3,
 	html5,
 	inertiajs,
@@ -97,6 +98,11 @@ export default function Techs() {
 							{/* PHP */}
 							<Marquee.Item>
 								<Tech image={php} caption="PHP" width={'80px'} height={'48px'} />
+							</Marquee.Item>
+
+							{/* C# */}
+							<Marquee.Item>
+								<Tech image={csharp} caption="C#" width={'60px'} height={'60px'} />
 							</Marquee.Item>
 
 							{/* MySQL */}

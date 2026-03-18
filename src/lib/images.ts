@@ -22,6 +22,7 @@ import nuxtui from '@/assets/techs/nuxt-ui.png'
 import laravel from '@/assets/techs/laravel.png'
 import inertiajs from '@/assets/techs/inertiajs.png'
 import php from '@/assets/techs/php.png'
+import csharp from '@/assets/techs/c-sharp.png'
 import mysql from '@/assets/techs/mysql.png'
 import postgresql from '@/assets/techs/postgresql.png'
 import nodejs from '@/assets/techs/nodejs.png'
@@ -76,6 +77,7 @@ export {
 	laravel,
 	inertiajs,
 	php,
+	csharp,
 	mysql,
 	postgresql,
 	nodejs,
