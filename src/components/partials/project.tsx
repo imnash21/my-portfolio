@@ -57,6 +57,7 @@ export default function Project({ image, title, projects, description }: Project
 						src={image}
 						alt={title}
 						objectFit={'cover'}
+						marginBlock={0}
 						shadow={'lg'}
 						aspectRatio={'4/3'}
 						cursor={'pointer'}
@@ -76,7 +77,7 @@ export default function Project({ image, title, projects, description }: Project
 			</Dialog.Trigger>
 
 			<Portal>
-				<Dialog.Backdrop />
+				<Dialog.Backdrop backdropFilter={'blur(8px)'} />
 				<Dialog.Positioner>
 					<Dialog.Content backgroundColor={'transparent'} shadow={'none'}>
 						<Dialog.CloseTrigger asChild top={'3'} right={'6'}>

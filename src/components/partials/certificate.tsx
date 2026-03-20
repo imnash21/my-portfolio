@@ -59,7 +59,7 @@ export default function Certificate({ image, caption }: CertificateProps) {
 			</Dialog.Trigger>
 
 			<Portal>
-				<Dialog.Backdrop />
+				<Dialog.Backdrop backdropFilter={'blur(8px)'} />
 				<Dialog.Positioner>
 					<Dialog.Content backgroundColor={'transparent'} shadow={'none'}>
 						<Dialog.CloseTrigger asChild top={'3'} right={'6'}>
