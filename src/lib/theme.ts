@@ -3,6 +3,10 @@ import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react'
 const customConfig = defineConfig({
 	theme: {
 		tokens: {
+			fonts: {
+				body: { value: "'Space Grotesk', system-ui, sans-serif" },
+				heading: { value: "'Space Grotesk', system-ui, sans-serif" },
+			},
 			colors: {
 				primary: { value: 'oklch(20.8% 0.042 265.755)' },
 				secondary: { value: 'oklch(27.9% 0.041 260.031)' },
