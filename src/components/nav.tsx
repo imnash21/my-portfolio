@@ -43,7 +43,7 @@ export default function Nav({ items }: NavProps) {
 					key={item.href}
 					href={item.href}
 					color={{ base: 'foregroundDimmed', _hover: 'foreground' }}
-					fontSize={'xs'}
+					fontSize={'sm'}
 					fontWeight={'semibold'}
 					textTransform={'uppercase'}
 					position={'relative'}
