@@ -1,7 +1,7 @@
 import { SimpleGrid } from '@chakra-ui/react'
 import Container from '../container'
 import SectionTitle from '../section-title'
-import Project from '../project'
+import Project from './project'
 import { carewiseLandingPage1, catClubCafeLandingPagePage1 } from '@/lib/images'
 import { carewiseProjects, catClubCafeProjects } from '@/lib/projects'
 import Section from '../section'

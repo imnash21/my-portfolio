@@ -1,9 +1,9 @@
 import { SimpleGrid } from '@chakra-ui/react'
 import Container from '../container'
 import SectionTitle from '../section-title'
-import Certificate from '../certificate'
 import { itsDatabase, itsHtmlCss, itsNetworkSecurity, mtaJava } from '@/lib/images'
 import Section from '../section'
+import Certificate from './certificate'
 
 export type CertificateType = {
 	image: string

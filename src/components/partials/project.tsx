@@ -1,9 +1,9 @@
 import { Center, CloseButton, Dialog, Heading, Image, Portal, Text } from '@chakra-ui/react'
-import type { ProjectType } from './partials/projects'
 import ProjectCarousel from './project-carousel'
 import { motion, useAnimation } from 'motion/react'
 import { useRef } from 'react'
-import { Prose } from './ui/prose'
+import type { ProjectType } from './projects'
+import { Prose } from '../ui/prose'
 
 const MotionImage = motion.create(Image)
 
