@@ -11,7 +11,7 @@ type TechProps = {
 export default function Tech({ image, caption, width = '60px', height = '60px' }: TechProps) {
 	return (
 		<ToggleTip content={caption}>
-			<Image src={image} alt={caption} objectFit={'fill'} width={width} height={height} />
+			<Image src={image} alt={caption} objectFit={'fill'} width={width} height={height} cursor={'pointer'} />
 		</ToggleTip>
 	)
 }
