@@ -24,7 +24,7 @@ import Tech from '../tech'
 
 export default function Techs() {
 	return (
-		<Box as={'section'} width={'full'} paddingBlock={{ base: '12', lg: '20' }}>
+		<Box as={'section'} width={'full'} paddingBlock={{ base: '12', lg: '20' }} backgroundColor={'white'}>
 			<Container>
 				<Marquee.Root autoFill pauseOnInteraction spacing={'4rem'}>
 					<Marquee.Edge side="start" />

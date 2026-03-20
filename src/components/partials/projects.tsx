@@ -13,7 +13,7 @@ export type ProjectType = {
 
 export default function Projects() {
 	return (
-		<Section id="projects" aria-labelledby="projects-title">
+		<Section id="projects" aria-labelledby="projects-title" backgroundColor={'white'}>
 			<Container>
 				<SectionTitle id="projects-title" textAlign={'center'}>
 					Projects
