@@ -16,12 +16,10 @@ export default function App() {
 		<>
 			<Header />
 
-			<Box as={'main'} backgroundColor={'white'} marginBlockEnd={measuredHeight} zIndex={1}>
-				<Box as={'section'} data-scroll-section={'top'} scrollMarginTop={'16'}>
-					<Hero />
-					<Techs />
-					<Separator />
-				</Box>
+			<Box as={'main'} marginBlockEnd={measuredHeight} zIndex={1}>
+				<Hero />
+				<Techs />
+				<Separator />
 				<Certificates />
 				<Projects />
 			</Box>

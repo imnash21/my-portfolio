@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 const sections = [
 	{ hash: '#', selector: '[data-scroll-section="top"]' },
+	{ hash: '#techs', selector: '#techs' },
 	{ hash: '#certificates', selector: '#certificates' },
 	{ hash: '#projects', selector: '#projects' },
 ] as const
@@ -22,11 +23,34 @@ export function useScrollHashTracker() {
 		if (!trackedSections.length) return
 
 		let animationFrameId: number | null = null
+		let isNavigating = false
+		let navigationTimeout: ReturnType<typeof setTimeout> | null = null
 
 		const getCurrentHash = () => window.location.hash || '#'
 
+		const stopNavigating = () => {
+			isNavigating = false
+		}
+
+		const handleAnchorClick = (e: MouseEvent) => {
+			const anchor = (e.target as HTMLElement).closest('a[href^="#"]')
+			if (!anchor) return
+
+			isNavigating = true
+
+			if (navigationTimeout !== null) clearTimeout(navigationTimeout)
+
+			window.removeEventListener('scrollend', stopNavigating)
+			window.addEventListener('scrollend', stopNavigating, { once: true })
+
+			// Fallback in case scrollend never fires (e.g. no scroll needed)
+			navigationTimeout = setTimeout(stopNavigating, 1000)
+		}
+
 		const updateHashFromScroll = () => {
 			animationFrameId = null
+
+			if (isNavigating) return
 
 			const scrollPosition = window.scrollY + 96
 			let nextHash = trackedSections[0].hash
@@ -49,6 +73,7 @@ export function useScrollHashTracker() {
 			animationFrameId = window.requestAnimationFrame(updateHashFromScroll)
 		}
 
+		document.addEventListener('click', handleAnchorClick)
 		requestHashUpdate()
 		window.addEventListener('scroll', requestHashUpdate, { passive: true })
 		window.addEventListener('resize', requestHashUpdate)
@@ -57,7 +82,12 @@ export function useScrollHashTracker() {
 			if (animationFrameId !== null) {
 				window.cancelAnimationFrame(animationFrameId)
 			}
+			if (navigationTimeout !== null) {
+				clearTimeout(navigationTimeout)
+			}
 
+			document.removeEventListener('click', handleAnchorClick)
+			window.removeEventListener('scrollend', stopNavigating)
 			window.removeEventListener('scroll', requestHashUpdate)
 			window.removeEventListener('resize', requestHashUpdate)
 		}
