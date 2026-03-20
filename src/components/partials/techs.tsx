@@ -1,4 +1,4 @@
-import { Box, Marquee } from '@chakra-ui/react'
+import { Marquee } from '@chakra-ui/react'
 import Container from '../container'
 import {
 	chakraui,
@@ -21,11 +21,17 @@ import {
 	vuetify,
 } from '@/lib/images'
 import Tech from '../tech'
+import SectionTitle from '../section-title'
+import Section from '../section'
 
 export default function Techs() {
 	return (
-		<Box as={'section'} width={'full'} paddingBlock={{ base: '12', lg: '20' }} backgroundColor={'white'}>
+		<Section id="techs" aria-labelledby="techs-title" backgroundColor={'white'}>
 			<Container>
+				<SectionTitle id="techs-title" textAlign={'center'}>
+					Tech Stack
+				</SectionTitle>
+
 				<Marquee.Root autoFill pauseOnInteraction spacing={'4rem'}>
 					<Marquee.Edge side="start" />
 					<Marquee.Viewport>
@@ -124,6 +130,6 @@ export default function Techs() {
 					<Marquee.Edge side="end" />
 				</Marquee.Root>
 			</Container>
-		</Box>
+		</Section>
 	)
 }

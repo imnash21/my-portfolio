@@ -7,6 +7,7 @@ import NavMobile from './nav-mobile'
 
 const navItems = [
 	{ label: 'Introduction', href: '#' },
+	{ label: 'Tech Stack', href: '#techs' },
 	{ label: 'Certificates', href: '#certificates' },
 	{ label: 'Projects', href: '#projects' },
 ] satisfies NavItemType[]
