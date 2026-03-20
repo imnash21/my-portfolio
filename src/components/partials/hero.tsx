@@ -9,6 +9,7 @@ export default function Hero() {
 	return (
 		<HStack
 			as={'section'}
+			data-scroll-section={'top'}
 			backgroundImage={`url(${background})`}
 			backgroundRepeat={'no-repeat'}
 			backgroundAttachment={'fixed'}
@@ -42,6 +43,13 @@ export default function Hero() {
 									M. Marhala
 								</Text>
 							</Heading>
+
+							<Text marginBlockStart={'2'} color={'foreground'} fontWeight={'medium'}>
+								Batchelor of Science in Information Technology
+							</Text>
+							<Text color={'foreground'} fontWeight={'medium'}>
+								University of Mindanao
+							</Text>
 						</div>
 
 						<Separator borderColor={'foregroundDimmed'} />
