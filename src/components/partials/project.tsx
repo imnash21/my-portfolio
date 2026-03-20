@@ -1,9 +1,19 @@
-import { Center, CloseButton, Dialog, Heading, Image, Portal, Text } from '@chakra-ui/react'
+import {
+	Center,
+	CloseButton,
+	Dialog,
+	Heading,
+	Image,
+	Portal,
+	Text,
+	type DialogOpenChangeDetails,
+} from '@chakra-ui/react'
 import ProjectCarousel from './project-carousel'
 import { motion, useAnimation } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import type { ProjectType } from './projects'
 import { Prose } from '../ui/prose'
+import { useClickAway } from '@uidotdev/usehooks'
 
 const MotionImage = motion.create(Image)
 
@@ -30,10 +40,17 @@ export default function Project({ image, title, projects, description }: Project
 		controls.start({ y: 0 })
 	}
 
+	const [open, setOpen] = useState(false)
+
+	const ref = useClickAway<HTMLDivElement>(() => {
+		setOpen(false)
+	})
+
+	const handleOpen = (e: DialogOpenChangeDetails) => setOpen(e.open)
+
 	return (
-		<Dialog.Root size={'full'}>
+		<Dialog.Root size={'full'} open={open} onOpenChange={handleOpen}>
 			<Dialog.Trigger asChild>
-				{/* Figure */}
 				<Prose marginInline={'auto'}>
 					{/* Image */}
 					<MotionImage
@@ -68,7 +85,7 @@ export default function Project({ image, title, projects, description }: Project
 						<Dialog.Body asChild height="full" padding={0}>
 							<Center>
 								{/* Carousel */}
-								<ProjectCarousel projects={projects} />
+								<ProjectCarousel ref={ref} projects={projects} />
 							</Center>
 						</Dialog.Body>
 					</Dialog.Content>

@@ -1,20 +1,23 @@
 import { Carousel, Image } from '@chakra-ui/react'
-import type { ProjectType } from './partials/projects'
+import type { ProjectType } from './projects'
+import { forwardRef } from 'react'
 
 type ProjectCarouselProps = {
 	projects: ProjectType[]
 }
 
-export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+const ProjectCarousel = forwardRef<HTMLDivElement, ProjectCarouselProps>(({ projects }, ref) => {
 	return (
-		<Carousel.Root slideCount={projects.length} maxWidth="6xl" gap="4" marginInline={'auto'}>
+		<Carousel.Root ref={ref} slideCount={projects.length} maxWidth="6xl" gap="4" marginInline={'auto'}>
 			<Carousel.Control justifyContent="center" gap="4" width="full">
+				{/* Previous Trigger */}
 				{/* <Carousel.PrevTrigger asChild>
 					<IconButton size="xs" variant="outline">
 						<LuChevronLeft />
 					</IconButton>
 				</Carousel.PrevTrigger> */}
 
+				{/* Items */}
 				<Carousel.ItemGroup>
 					{projects.map((project, index) => (
 						<Carousel.Item key={index} index={index} aspectRatio={{ base: 3 / 2, lg: 16 / 9 }}>
@@ -22,16 +25,16 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 							<Image
 								src={project.image}
 								alt={project.title}
-								shadow={'xl'}
 								width={'full'}
 								height={'full'}
 								borderRadius={'lg'}
-								objectFit={'fill'}
+								objectFit={'contain'}
 							/>
 						</Carousel.Item>
 					))}
 				</Carousel.ItemGroup>
 
+				{/* Next Trigger */}
 				{/* <Carousel.NextTrigger asChild>
 					<IconButton size="xs" variant="outline">
 						<LuChevronRight />
@@ -65,4 +68,6 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 			</Carousel.IndicatorGroup>
 		</Carousel.Root>
 	)
-}
+})
+
+export default ProjectCarousel
