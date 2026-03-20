@@ -1,8 +1,9 @@
-import { Box, Center, CloseButton, Dialog, Image, Portal } from '@chakra-ui/react'
-import { Prose } from './ui/prose'
-import type { CertificateType } from './partials/certificates'
+import { Box, Center, CloseButton, Dialog, Image, Portal, type DialogOpenChangeDetails } from '@chakra-ui/react'
 import { motion, useAnimation } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import type { CertificateType } from './certificates'
+import { Prose } from '../ui/prose'
+import { useClickAway } from '@uidotdev/usehooks'
 
 const MotionImage = motion.create(Image)
 
@@ -26,8 +27,16 @@ export default function Certificate({ image, caption }: CertificateProps) {
 		controls.start({ y: 0 })
 	}
 
+	const [open, setOpen] = useState(false)
+
+	const ref = useClickAway<HTMLImageElement>(() => {
+		setOpen(false)
+	})
+
+	const handleOpen = (e: DialogOpenChangeDetails) => setOpen(e.open)
+
 	return (
-		<Dialog.Root size={'full'}>
+		<Dialog.Root size={'full'} open={open} onOpenChange={handleOpen}>
 			<Dialog.Trigger asChild>
 				{/* Figure */}
 				<Prose as={'figure'} marginInline={'auto'}>
@@ -59,7 +68,14 @@ export default function Certificate({ image, caption }: CertificateProps) {
 						<Dialog.Body asChild height="full" padding={0}>
 							<Center>
 								{/* Image */}
-								<Image src={image} alt={caption} aspectRatio={4 / 3} maxHeight={'85svh'} borderRadius={'lg'} />
+								<Image
+									ref={ref}
+									src={image}
+									alt={caption}
+									aspectRatio={4 / 3}
+									maxHeight={'85svh'}
+									borderRadius={'lg'}
+								/>
 							</Center>
 						</Dialog.Body>
 					</Dialog.Content>
