@@ -1,13 +1,9 @@
+import { navItems } from '@/lib/nav'
 import { useEffect } from 'react'
 
-const sections = [
-	{ hash: '#', selector: '[data-scroll-section="top"]' },
-	{ hash: '#techs', selector: '#techs' },
-	{ hash: '#certificates', selector: '#certificates' },
-	{ hash: '#projects', selector: '#projects' },
-] as const
+const sections = navItems
 
-type SectionHash = (typeof sections)[number]['hash']
+type SectionHash = (typeof sections)[number]['href']
 type TrackedSection = { hash: SectionHash; element: HTMLElement | null }
 type ActiveSection = { hash: SectionHash; element: HTMLElement }
 
@@ -15,7 +11,7 @@ export function useScrollHashTracker() {
 	useEffect(() => {
 		const trackedSections = sections
 			.map<TrackedSection>((section) => ({
-				hash: section.hash,
+				hash: section.href,
 				element: document.querySelector<HTMLElement>(section.selector),
 			}))
 			.filter((section): section is ActiveSection => section.element !== null)

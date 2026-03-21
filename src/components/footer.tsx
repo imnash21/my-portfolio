@@ -123,7 +123,7 @@ function Social() {
 
 			<Box as={'ul'} spaceY={'3'}>
 				{socials.map((social) => (
-					<li>
+					<li key={social.label}>
 						<HStack asChild color={'foreground'}>
 							<Link href={social.href} target={'_blank'}>
 								<Icon>
