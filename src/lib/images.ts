@@ -6,6 +6,8 @@ import itsHtmlCss from '@/assets/certificates/Certiport - Infomation Technology 
 import itsDatabase from '@/assets/certificates/Certiport - Information Technology Specialist (Databases).jpg'
 import itsNetworkSecurity from '@/assets/certificates/Certiport - Information Technology Specialist (Network Security).jpg'
 import mtaJava from '@/assets/certificates/Certiport - MTA Exam.jpg'
+import umGitHub from '@/assets/certificates/UM - GitHub.jpg'
+import umJavaScript from '@/assets/certificates/UM - JavaScript.jpg'
 
 // Tech Logos
 import react from '@/assets/techs/react.png'
@@ -62,6 +64,8 @@ export {
 	itsHtmlCss,
 	itsDatabase,
 	itsNetworkSecurity,
+	umGitHub,
+	umJavaScript,
 	// Tech Logos
 	react,
 	vuejs,
