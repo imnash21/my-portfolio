@@ -24,6 +24,27 @@ import Tech from '../tech'
 import SectionTitle from '../section-title'
 import Section from '../section'
 
+const techs = [
+	{ image: react, caption: 'React', width: '64px' },
+	{ image: vuejs, caption: 'Vue.js', width: '64px' },
+	{ image: html5, caption: 'HTML5' },
+	{ image: css3, caption: 'CSS3' },
+	{ image: javascript, caption: 'JavaScript' },
+	{ image: typescript, caption: 'TypeScript' },
+	{ image: tailwindcss, caption: 'Tailwind CSS', width: '80px', height: '42px' },
+	{ image: mantine, caption: 'Mantine' },
+	{ image: chakraui, caption: 'Chakra UI', width: '64px' },
+	{ image: vuetify, caption: 'Vuetify', width: '64px' },
+	{ image: nuxtui, caption: 'Nuxt UI' },
+	{ image: nodejs, caption: 'Node.js' },
+	{ image: php, caption: 'PHP' },
+	{ image: laravel, caption: 'Laravel' },
+	{ image: inertiajs, caption: 'Inertia.js' },
+	{ image: mysql, caption: 'MySQL' },
+	{ image: postgresql, caption: 'PostgreSQL' },
+	{ image: csharp, caption: 'C#' },
+]
+
 export default function Techs() {
 	return (
 		<Section id="techs" aria-labelledby="techs-title" backgroundColor={'white'}>
@@ -36,95 +57,11 @@ export default function Techs() {
 					<Marquee.Edge side="start" />
 					<Marquee.Viewport>
 						<Marquee.Content alignItems={'center'}>
-							{/* React */}
-							<Marquee.Item>
-								<Tech image={react} caption="React" width={'64px'} />
-							</Marquee.Item>
-
-							{/* Vue.js */}
-							<Marquee.Item>
-								<Tech image={vuejs} caption="Vue.js" width={'64px'} />
-							</Marquee.Item>
-
-							{/* HTML 5 */}
-							<Marquee.Item>
-								<Tech image={html5} caption="HTML5" />
-							</Marquee.Item>
-
-							{/* CSS 3 */}
-							<Marquee.Item>
-								<Tech image={css3} caption="CSS3" />
-							</Marquee.Item>
-
-							{/* JavaScript */}
-							<Marquee.Item>
-								<Tech image={javascript} caption="JavaScript" />
-							</Marquee.Item>
-
-							{/* TypeScript */}
-							<Marquee.Item>
-								<Tech image={typescript} caption="TypeScript" />
-							</Marquee.Item>
-
-							{/* Tailwind CSS */}
-							<Marquee.Item>
-								<Tech image={tailwindcss} caption="Tailwind CSS" width={'80px'} height={'42px'} />
-							</Marquee.Item>
-
-							{/* Mantine */}
-							<Marquee.Item>
-								<Tech image={mantine} caption="Mantine" />
-							</Marquee.Item>
-
-							{/* Chakra UI */}
-							<Marquee.Item>
-								<Tech image={chakraui} caption="Chakra UI" width={'64px'} />
-							</Marquee.Item>
-
-							{/* Vuetify */}
-							<Marquee.Item>
-								<Tech image={vuetify} caption="Vuetify" width={'64px'} />
-							</Marquee.Item>
-
-							{/* Nuxt UI */}
-							<Marquee.Item>
-								<Tech image={nuxtui} caption="Nuxt UI" width={'72px'} height={'52px'} />
-							</Marquee.Item>
-
-							{/* Laravel */}
-							<Marquee.Item>
-								<Tech image={laravel} caption="Laravel" width={'64px'} />
-							</Marquee.Item>
-
-							{/* Inertiajs */}
-							<Marquee.Item>
-								<Tech image={inertiajs} caption="Inertia.js" />
-							</Marquee.Item>
-
-							{/* PHP */}
-							<Marquee.Item>
-								<Tech image={php} caption="PHP" width={'80px'} height={'48px'} />
-							</Marquee.Item>
-
-							{/* C# */}
-							<Marquee.Item>
-								<Tech image={csharp} caption="C#" width={'60px'} height={'60px'} />
-							</Marquee.Item>
-
-							{/* MySQL */}
-							<Marquee.Item>
-								<Tech image={mysql} caption="MySQL" width={'80px'} />
-							</Marquee.Item>
-
-							{/* PostgreSQL */}
-							<Marquee.Item>
-								<Tech image={postgresql} caption="PostgreSQL" />
-							</Marquee.Item>
-
-							{/* Node.js */}
-							<Marquee.Item>
-								<Tech image={nodejs} caption="Node.js" width={'88px'} height={'48px'} />
-							</Marquee.Item>
+							{techs.map((tech, index) => (
+								<Marquee.Item key={`tech-${index}`}>
+									<Tech image={tech.image} caption={tech.caption} width={tech.width} height={tech.height} />
+								</Marquee.Item>
+							))}
 						</Marquee.Content>
 					</Marquee.Viewport>
 					<Marquee.Edge side="end" />
